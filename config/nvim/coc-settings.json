@@ -1,0 +1,12 @@
+{
+    // python
+    "python.pythonPath": "python3",
+    "python.venvPath": "~/venv3.7/",
+    // jedi
+    "python.jediEnabled": true,
+    "suggest.timeout": 5000,
+    "python.jediPath": "~/venv3.7/jedi/lib/python3.7/site-packages/",
+    //linting
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false
+}
