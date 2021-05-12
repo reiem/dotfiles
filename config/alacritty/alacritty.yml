@@ -13,13 +13,13 @@ scrolling:
 # Font configuration
 font:
   normal:
-    family: Fira Code
+    family: MesloLGS NF
     style: Regular
   bold:
-    family: Fira Code
+    family: MesloLGS NF
     style: Bold
   italic:
-    family: Fira Code
+    family: MesloLGS NF
     style: Italic
   size: 14.0
   offset:
@@ -28,42 +28,107 @@ font:
   glyph_offset:
     x: 0
     y: 0
-# Colors (Nova)
+
+
+# Colors (Gruvbox dark)
 colors:
-  # Default colors
   primary:
-    background: '#3C4C55'
-    foreground: '#C5D4DD'
-
+    # hard contrast background - '#1d2021'
+    background:        &gruvbox_dark_bg '#282828'
+    # soft contrast background - '#32302f'
+    foreground:        '#fbf1c7'
+    bright_foreground: '#f9f5d7'
+    dim_foreground:    '#f2e5bc'
   cursor:
-    text: '#212121'
-    cursor: '#C0C5CE'
-
-  # Normal colors
-  normal:
-    black:   '#3C4C55'
-    red:     '#DF8C8C'
-    green:   '#A8CE93'
-    yellow:  '#DADA93'
-    blue:    '#83AFE5'
-    magenta: '#9A93E1'
-    cyan:    '#7FC1CA'
-    white:   '#C5D4DD'
-
-  # Bright colors
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  # search:
+  #   matches:
+  #     foreground: '#000000'
+  #     background: '#ffffff'
+  #   focused_match:
+  #    foreground: CellBackground
+  #    background: CellForeground
+  #   bar:
+  #     background: ''
+  #     foreground: ''
+  # line_indicator:
+  #   foreground: None
+  #   background: None
+  selection:
+    text:       CellBackground
+    background: CellForeground
   bright:
-    black:   '#899BA6'
-    red:     '#F2C38F'
-    green:   '#A8CE93'
-    yellow:  '#DADA93'
-    blue:    '#83AFE5'
-    magenta: '#D18EC2'
-    cyan:    '#7FC1CA'
-    white:   '#E6EEF3'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  normal:
+    black:   *gruvbox_dark_bg
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  dim:
+    black:   '#32302f'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#928374'
+  # indexed_colors: []
 
-cursor:
-  style: Block
-  unfocused_hollow: true
+
+
+
+# Colors (Nova)
+#colors: # Default colors
+  #primary:
+          ##    background: '#3C4C55'
+    #background: '#26333b'
+    #foreground: '#C5D4DD'
+
+  #cursor:
+    #text: '#212121'
+    #cursor: '#C0C5CE'
+
+  ## Normal colors
+  #normal:
+    #black:   '#3C4C55'
+    #red:     '#DF8C8C'
+    #green:   '#A8CE93'
+    #yellow:  '#DADA93'
+    #blue:    '#83AFE5'
+    #magenta: '#9A93E1'
+    #cyan:    '#7FC1CA'
+    #white:   '#C5D4DD'
+
+  ## Bright colors
+  #bright:
+    #black:   '#899BA6'
+    #red:     '#F2C38F'
+    #green:   '#A8CE93'
+    #yellow:  '#DADA93'
+    #blue:    '#83AFE5'
+    #magenta: '#D18EC2'
+    #cyan:    '#7FC1CA'
+    #white:   '#E6EEF3'
+
+#cursor:
+  #style: Block
+  #unfocused_hollow: true
 
 key_bindings:
 - { key: K, mods: Command, chars: "\x08K" }

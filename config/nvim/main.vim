@@ -17,3 +17,14 @@ highlight LineNr ctermfg=grey ctermbg=black
 
 " Use python version in neovim venv
 let g:python3_host_prog="~/venv3.7/neovim/bin/python"
+
+" Show a bar at col 80
+highlight ColorColumn ctermbg=darkgrey
+:set colorcolumn=80
+
+" Switching between panes
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+

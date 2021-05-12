@@ -17,5 +17,19 @@ Plug 'junegunn/fzf.vim'
 " NERDCommenter
 Plug 'preservim/nerdcommenter'
 
+" Vimspector
+Plug 'puremourning/vimspector'
+
+" eunuch (File commands like :Move etc)
+Plug 'tpope/vim-eunuch'
+
+" vifm
+Plug 'vifm/vifm.vim'
+
+" Fugitive
+Plug 'tpope/vim-fugitive'
+
+" Color scheme Gruvebox
+Plug 'morhetz/gruvbox'
 
 call plug#end()
