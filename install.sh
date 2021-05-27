@@ -30,7 +30,6 @@ info() {
 success() {
     echo -e "${COLOR_GREEN}$1${COLOR_NONE}"
 }
-
 get_linkables() {
     find -H "$DOTFILES" -maxdepth 3 -name '*.symlink'
 }
@@ -72,12 +71,36 @@ setup_symlinks() {
     done
 }
 
+setup_nvim() {
+    title "Setup Neovim"
+
+    if ! command -v nvim &> /dev/null
+    then
+        install_neovim
+    fi
+}
+
+install_neovim() {
+    info "Installing Neovim"
+
+    if ! command -v apt-get &> /dev/null
+    then
+        sudo apt-get install neovim
+    else
+        error "Could not found apt-get!."
+    fi
+}
+
 case "$1" in
     link)
         setup_symlinks
         ;;
+    nvim)
+	setup_nvim
+	;;
     all)
         setup_symlinks
+	setup_nvim
         ;;
     *)
         echo -e $"\nUsage: $(basename "$0") {link|all}\n"
