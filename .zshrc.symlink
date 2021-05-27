@@ -1,0 +1,31 @@
+# pure prompt
+autoload -U promptinit; promptinit
+prompt pure
+
+# ALIASES:
+# colors in ls
+alias ls='ls -G'
+
+# print git branch tree
+alias gt='git log --graph --pretty=oneline --abbrev-commit --color=always | less -r'
+
+# use nvim instead of vim
+alias vim='nvim'
+
+# Enable vi mode
+bindkey -v
+
+# Histroy search in vi mode
+bindkey "^R" history-incremental-search-backward
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# If you come from bash you might have to change your $PATH.
+export PATH=PATH=/usr/local/bin:$HOME/bin:/usr/local/bin:/usr/local/opt/mongodb-community@3.6/bin:/Users/stefan/Library/Python/3.8/bin:$PATH
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+
