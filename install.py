@@ -47,6 +47,34 @@ def install_alacritty() -> None:
     os.system("cargo install alacritty")
     logging.info("Done installing alacritty!")
 
+def link_config() -> None:
+    # link .config files
+    logging.info("Linking .config files...")
+    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
+    os.system(f"ln -s {dotfiles_dir}/.config ~/.config")
+
+def link_zshrc() -> None:
+    # link .zshrc
+    logging.info("Linking .zshrc...")
+    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
+    os.system(f"ln -s {dotfiles_dir}/.zshrc ~/.zshrc")
+
+def install_font() -> None:
+    logging.info("Installing Fira Code font...")
+    # install with brew
+    os.system("brew tap homebrew/cask-fonts")
+    os.system("brew install --cask font-fira-code")
+
+def install_startship() -> None:
+    logging.info("Installing starship...")
+    # Download shell script
+    install_temp = get_install_temp_dir()
+    starship_script = os.path.join(install_temp, "starship_install.sh")
+    os.system(f"curl -fsSL https://starship.rs/install.sh -o {starship_script}")
+    # Run shell script
+    os.system(f"sh {starship_script} -y")
+
+
 def main(args: argparse.Namespace) -> None:
 
     # backup existing .config files
@@ -54,11 +82,10 @@ def main(args: argparse.Namespace) -> None:
         backup_config()
 
     install_alacritty()
-
-    # link .config files
-    logging.info("Linking .config files...")
-    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
-    os.system(f"ln -s {dotfiles_dir}/.config ~/.config")
+    link_config()
+    install_font()
+    install_startship()
+    link_zshrc()
 
     # open alacritty
     os.system("alacritty")

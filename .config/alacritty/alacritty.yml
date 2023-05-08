@@ -141,6 +141,16 @@ font:
   offset:
     x: 0
     y: 10
+  normal:
+    family: 'Fira Code'
+    weight: 400
+  bold:
+    family: 'Fira Code'
+    weight: 700
+  italic:
+    family: 'Fira Code'
+    weight: 400
+    slant: italic
 
 window:
   decorations: buttonless  # Hide title bar.
