@@ -55,6 +55,11 @@ def main(args: argparse.Namespace) -> None:
 
     install_alacritty()
 
+    # link .config files
+    logging.info("Linking .config files...")
+    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
+    os.system(f"ln -s {dotfiles_dir}/.config ~/.config")
+
     # open alacritty
     os.system("alacritty")
 
