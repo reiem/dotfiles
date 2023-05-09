@@ -14,6 +14,10 @@ import argparse
 from datetime import datetime
 
 
+DOTFILES_DIR = os.path.dirname(os.path.abspath(__file__))
+CONFIG_DIR = os.path.join(DOTFILES_DIR, ".config")
+
+
 def backup_config() -> None:
     logging.info("Backing up existing config files...")
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -50,14 +54,13 @@ def install_alacritty() -> None:
 def link_config() -> None:
     # link .config files
     logging.info("Linking .config files...")
-    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
-    os.system(f"ln -s {dotfiles_dir}/.config ~/.config")
+    os.system(f"ln -s {CONFIG_DIR} ~/.config")
 
 def link_zshrc() -> None:
     # link .zshrc
     logging.info("Linking .zshrc...")
-    dotfiles_dir = os.path.dirname(os.path.abspath(__file__))
-    os.system(f"ln -s {dotfiles_dir}/.zshrc ~/.zshrc")
+    zshrc = os.path.join(CONFIG_DIR, "zsh", ".zshrc")
+    os.system(f"ln -s {zshrc} ~/.zshrc")
 
 def install_font() -> None:
     logging.info("Installing Fira Code font...")

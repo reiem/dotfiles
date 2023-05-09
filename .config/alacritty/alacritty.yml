@@ -140,20 +140,26 @@ font:
   size: 14
   offset:
     x: 0
-    y: 10
+    y: 0
   normal:
     family: 'Fira Code'
-    weight: 400
   bold:
-    family: 'Fira Code'
-    weight: 700
+    family: Fira Code
+    style: 'Bold'
   italic:
     family: 'Fira Code'
-    weight: 400
-    slant: italic
+    style: 'Italic'
 
 window:
   decorations: buttonless  # Hide title bar.
   padding:
-    x: 10
-    y: 10
+    x: 5
+    y: 5
+
+shell:
+  program: /usr/local/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -s
+    - alacritty
