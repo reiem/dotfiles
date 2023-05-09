@@ -77,6 +77,11 @@ def install_startship() -> None:
     # Run shell script
     os.system(f"sh {starship_script} -y")
 
+def install_zsh_autosuggestions() -> None:
+    logging.info("Installing zsh autosuggestions...")
+    # clone repo
+    installed_plugins_dir = os.path.join(CONFIG_DIR, "zsh", ".installed_plugins")
+    os.system(f"git clone https://github.com/zsh-users/zsh-autosuggestions {installed_plugins_dir}/zsh-autosuggestions")
 
 def main(args: argparse.Namespace) -> None:
 
@@ -89,6 +94,7 @@ def main(args: argparse.Namespace) -> None:
     install_font()
     install_startship()
     link_zshrc()
+    install_zsh_autosuggestions()
 
     # open alacritty
     os.system("alacritty")
