@@ -80,8 +80,25 @@ def install_startship() -> None:
 def install_zsh_autosuggestions() -> None:
     logging.info("Installing zsh autosuggestions...")
     # clone repo
-    installed_plugins_dir = os.path.join(CONFIG_DIR, "zsh", ".installed_plugins")
-    os.system(f"git clone https://github.com/zsh-users/zsh-autosuggestions {installed_plugins_dir}/zsh-autosuggestions")
+    zsh_autosuggestions_dir = os.path.join(CONFIG_DIR, "zsh", "plugins", "zsh-autosuggestions")
+    # remove existing dir
+    if os.path.exists(zsh_autosuggestions_dir):
+        os.system(f"rm -rf {zsh_autosuggestions_dir}")
+    os.system(f"git clone https://github.com/zsh-users/zsh-autosuggestions {zsh_autosuggestions_dir}")
+
+def install_tmux() -> None:
+    logging.info("Installing tmux...")
+    # install with brew
+    os.system("brew install tmux")
+
+def install_tpm() -> None:
+    logging.info("Installing tmux plugin manager...")
+    # clone repo
+    tpm_dir = os.path.join(CONFIG_DIR, "tmux", "plugins", "tpm")
+    # remove existing dir
+    if os.path.exists(tpm_dir):
+        os.system(f"rm -rf {tpm_dir}")
+    os.system(f"git clone https://github.com/tmux-plugins/tpm {tpm_dir}")
 
 def main(args: argparse.Namespace) -> None:
 
@@ -95,6 +112,8 @@ def main(args: argparse.Namespace) -> None:
     install_startship()
     link_zshrc()
     install_zsh_autosuggestions()
+    install_tmux()
+    install_tpm()
 
     # open alacritty
     os.system("alacritty")

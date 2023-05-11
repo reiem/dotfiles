@@ -1,2 +1,3 @@
 .install_temp
-.config/zsh/.installed_plugins/
+.config/zsh/plugins/
+.config/tmux/plugins/
