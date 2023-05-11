@@ -118,6 +118,7 @@ def main(args: argparse.Namespace) -> None:
     # open alacritty
     os.system("alacritty")
 
+
 def setup_logging(verbose: bool) -> None:
     """
     Sets up logging
