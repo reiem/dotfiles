@@ -100,6 +100,11 @@ def install_tpm() -> None:
         os.system(f"rm -rf {tpm_dir}")
     os.system(f"git clone https://github.com/tmux-plugins/tpm {tpm_dir}")
 
+def install_neovim() -> None:
+    logging.info("Installing neovim...")
+    # install with brew
+    os.system("brew install neovim")
+
 def main(args: argparse.Namespace) -> None:
 
     # backup existing .config files
@@ -114,6 +119,7 @@ def main(args: argparse.Namespace) -> None:
     install_zsh_autosuggestions()
     install_tmux()
     install_tpm()
+    install_neovim()
 
     # open alacritty
     os.system("alacritty")
