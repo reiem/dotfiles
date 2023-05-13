@@ -11,12 +11,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " " -- Make sure to set `mapleader` before lazy so your mappings are correct
-
+require("remap")
 require("lazy").setup({
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false, -- load this one immediately
-  }
+	{
+		"christoomey/vim-tmux-navigator",
+		lazy = false, -- load this one immediately
+	},
+	{
+		'nvim-telescope/telescope.nvim', tag = '0.1.1',
+		dependencies = { 'nvim-lua/plenary.nvim' }
+	}
 })
-print('lazy loaded')
