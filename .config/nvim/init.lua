@@ -23,5 +23,4 @@ require("lazy").setup({
 	},
 	{ "ellisonleao/gruvbox.nvim", priority = 1000 }
 })
-vim.o.termguicolors = true
-vim.cmd'colorscheme gruvbox'
+
