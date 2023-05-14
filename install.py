@@ -63,10 +63,10 @@ def link_zshrc() -> None:
     os.system(f"ln -s {zshrc} ~/.zshrc")
 
 def install_font() -> None:
-    logging.info("Installing Fira Code font...")
+    logging.info("Installing fonts...")
     # install with brew
     os.system("brew tap homebrew/cask-fonts")
-    os.system("brew install --cask font-fira-code")
+    os.system("brew install --cask font-hack-nerd-font")
 
 def install_startship() -> None:
     logging.info("Installing starship...")

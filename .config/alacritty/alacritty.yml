@@ -1,3 +1,5 @@
+env:
+  TERM: xterm-256color
 # The definition of color schemes.
 schemes:
   gruvbox_material_hard_dark: &gruvbox_material_hard_dark
@@ -142,13 +144,20 @@ font:
     x: 0
     y: 0
   normal:
-    family: 'Fira Code'
+    family: Hack Nerd Font Mono
+    style:  Regular
   bold:
-    family: Fira Code
-    style: 'Bold'
+    #family: JetBrainsMono Nerd Font Mono
+    family: Hack Nerd Font Mono
+    style:  Bold
   italic:
-    family: 'Fira Code'
-    style: 'Italic'
+    #family: JetBrainsMono Nerd Font Mono
+    family: Hack Nerd Font Mono
+    style:  Italic
+  bold_italic:
+    #family: JetBrainsMono Nerd Font Mono
+    family: Hack Nerd Font Mono
+    style: Bold Italic
 
 window:
   decorations: buttonless  # Hide title bar.
