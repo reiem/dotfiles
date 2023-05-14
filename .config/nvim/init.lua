@@ -31,6 +31,9 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/playground"
+	},
+	{
+		"mbbill/undotree"
 	}
 })
 
