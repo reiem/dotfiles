@@ -18,6 +18,9 @@ CONFIG_DIR = os.path.join(DOTFILES_DIR, ".config")
 
 
 def backup_config() -> None:
+    """
+    Backs up existing config files
+    """
     logging.info("Backing up existing config files...")
     timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
     os.system(f"mv ~/.config ~/.config.bak_{timestamp}")
@@ -25,6 +28,7 @@ def backup_config() -> None:
     os.system(f"mv ~/.tmux.conf ~/.tmux.conf.bak_{timestamp}")
     os.system(f"mv ~/.zshrc ~/.zshrc.bak_{timestamp}")
     logging.info("Done backing up existing config files!")
+
 
 def get_install_temp_dir() -> str:
     """

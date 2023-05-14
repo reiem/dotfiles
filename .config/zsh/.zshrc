@@ -10,3 +10,7 @@ bindkey -v
 bindkey ^R history-incremental-search-backward
 bindkey ^S history-incremental-search-forward
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
