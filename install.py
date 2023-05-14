@@ -7,7 +7,6 @@ Python script to setup my dev envionment with
 On MacOS:
 - alacritty
 """
-import sys
 import os
 import logging
 import argparse

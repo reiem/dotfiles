@@ -1,7 +1,5 @@
 
 function ColorMyPencils(color)
-	vim.o.termguicolors = true
-
 	color = color or "gruvbox"
 	vim.cmd.colorscheme(color)
 

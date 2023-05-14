@@ -44,3 +44,13 @@ end)
 
 lsp.setup()
 
+require'lspconfig'.lua_ls.setup {
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Get the language server to regognize the `vim` global
+                globals = {'vim'},
+            },
+        },
+    },
+}
