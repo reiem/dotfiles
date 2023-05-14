@@ -1,3 +1,5 @@
 .install_temp
 .config/zsh/plugins/
 .config/tmux/plugins/
+.config/htop
+.config/iterm2
