@@ -21,17 +21,12 @@ return {
         mason_lspconfig.setup({
             -- list of server for mason to install
             ensure_installed = {
-                "tsserver",
-                "html",
-                "cssls",
-                "jsonls",
                 "yamlls",
                 "dockerls",
                 "bashls",
                 "vimls",
                 "pyright",
                 "clangd",
-                "groovyls",
                 "lua_ls",
             },
 

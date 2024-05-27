@@ -1,3 +1,4 @@
+
 return {
   {
     "nvim-treesitter/nvim-treesitter",
@@ -28,6 +29,7 @@ return {
           "regex",
           "rust",
           "c_sharp",
+          "groovy",
         },
         highlight = {
           enable = true,
@@ -45,3 +47,4 @@ return {
     end
   },
 }
+

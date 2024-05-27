@@ -146,5 +146,38 @@ return {
                 }
             }
         })
+        lspconfig['pylsp'].setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+            settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = { enabled = false },
+                        pyflakes = { enabled = false },
+                        pylint = {
+                            enabled = true,
+                            -- use venv from current working directory
+                            executable = "./venv/bin/pylint",
+                        },
+                        yapf = { enabled = false },
+                        isort = { enabled = false },
+                        jedi_completion = { enabled = false },
+                        jedi_definition = { enabled = false },
+                        jedi_hover = { enabled = false },
+                        jedi_references = { enabled = false },
+                        jedi_signature_help = { enabled = false },
+                        jedi_symbols = { enabled = false },
+                        mccabe = { enabled = false },
+                        pydocstyle = { enabled = false },
+                        rope_completion = { enabled = false },
+                        rope_definition = { enabled = false },
+                        rope_hover = { enabled = false },
+                        rope_references = { enabled = false },
+                        rope_signature_help = { enabled = false },
+                        rope_symbols = { enabled = false },
+                    }
+                }
+            }
+        })
     end
 }

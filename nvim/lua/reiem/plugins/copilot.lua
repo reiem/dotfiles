@@ -8,11 +8,11 @@ return {
           auto_trigger = false,
           debounce = 75,
           keymap = {
-            accept = "¬", -- This is <M-l> on my keyboard
+            accept = "<M-l>", -- This is <M-l> on my keyboard
             accept_word = false,
             accept_line = false,
-            next = "‘", -- This is <M-]> on my keyboard
-            prev = "“", -- This is <M-[> on my keyboard
+            next = "<M-]>", -- This is <M-]> on my keyboard
+            prev = "M-[>", -- This is <M-[> on my keyboard
             dismiss = "<C-]>",
           },
         },
