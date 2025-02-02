@@ -21,7 +21,7 @@ return {
         mason_lspconfig.setup({
             -- list of server for mason to install
             ensure_installed = {
-                "tsserver",
+                "ts_ls",
                 "html",
                 "cssls",
                 "jsonls",
